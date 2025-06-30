@@ -1,0 +1,175 @@
+<!-- เริ่มต้น HTML -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DiogenusMath</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: 'Kanit', sans-serif;
+      background-color: #f8fbff;
+      color: #003366;
+    }
+
+    .wrapper {
+      min-height: calc(100vh - 60px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .has-dropdown {
+      position: relative;
+    }
+
+    .has-dropdown:hover .dropdown {
+      display: block;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+      color: #1e90ff;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      border-radius: 6px;
+      padding: 0.5rem;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      min-width: 100px;
+      z-index: 99;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 0.3rem 1rem;
+      color: #003366;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background: url('images/math.png') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 4px #00000099;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      animation: fadeDown 1s ease;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .floating-bubbles div {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: bubble 20s infinite ease-in-out;
+    }
+
+    .floating-bubbles div:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .floating-bubbles div:nth-child(2) { left: 30%; animation-delay: 5s; }
+    .floating-bubbles div:nth-child(3) { left: 50%; animation-delay: 10s; }
+    .floating-bubbles div:nth-child(4) { left: 70%; animation-delay: 15s; }
+    .floating-bubbles div:nth-child(5) { left: 90%; animation-delay: 2s; }
+
+    @keyframes bubble {
+      0% { transform: translateY(0); opacity: 0.3; }
+      50% { opacity: 0.5; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    @keyframes fadeDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <nav>
+      <div>DiogenusMath แหล่งรวบรวมโจทย์</div>
+      <div class="nav-buttons">
+        <span class="has-dropdown">
+          <a href="#">ข้อสอบ ALEVEL</a>
+          <div class="dropdown">
+            <a href="alevel66.html">ปี 66</a>
+            <a href="alevel65.html">ปี 65</a>
+          </div>
+        </span>
+      </div>
+    </nav>
+
+    <header>
+      <div class="floating-bubbles">
+        <div></div><div></div><div></div><div></div><div></div>
+      </div>
+      <h1>DiogenusMath</h1>
+      <p>รวมโจทย์คณิตศาสตร์ ALEVEL พร้อมเฉลย</p>
+    </header>
+  </div>
+
+  <footer>
+    เว็บไซต์นี้สร้างเพื่อส่งงานในรายวิชาวิทยาการคำนวณ By ธีรเดช เลขที่4 ธันยธรณ์ เลขที่3 อนุสรณ์ เลขที่15
+  </footer>
+</body>
+</html>
